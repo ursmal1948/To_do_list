@@ -6,15 +6,37 @@
     column-gap: 20px;
     padding: 15px;
     background-color: white;
-    
+    align-content: center}
+
+@media (max-width:767px) {
+    .form {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 0;
+        padding-top: 19px;
+        padding-bottom: 19px;
+    }
 }
 
 .form__field {
     padding-left: 10px;
 }
+@media (max-width:767px) {
+    .form__field {
+        height:35px;
+    }
+}
+
 
 .form__button {
     background: teal;
     color: white;
     border: 1px solid teal;
+    border-radius: 2px;
+}
+
+@media (max-width:767px) {
+    .form__button {
+        height: 35px;
+    }
 }

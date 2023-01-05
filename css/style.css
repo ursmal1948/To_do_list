@@ -9,9 +9,12 @@ html {
 body {
     font-family: Montseratt, sans-serif;
     background-color: #eee;
+    word-break: break-word;
 }
 
 .header {
     font-size: 30px ;
     font-weight: 700px;
 }
+
+
