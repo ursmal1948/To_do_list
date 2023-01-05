@@ -1,13 +1,6 @@
 {
     const tasks = [
-        {
-            content: "nagrać lekcję",
-            done: false,
-        },
-        {
-            content:"zjeść pierogi",
-            done: true,
-        },
+       
     ];
 
     const toggleTaskDone = (taskIndex) => {
@@ -21,9 +14,18 @@
             content: newTaskContent,
         });
  
+        
     render();
     };
-     
+
+    const clearAndFocusInput =  () => {
+        const newTask = document.querySelector(".js-newTask")
+        console.log(newTask)
+        newTask.value = ""
+        newTask.focus();
+    };
+
+
     const removeTask = (taskIndex) => {
         tasks.splice(taskIndex, 1);
                     render();
@@ -51,13 +53,11 @@
     
         for (const task of tasks) {
             htmlString += `
-            <li 
-            ${task.done ? "style=\"text-decoration: line-through\"" : ""}
+            <li class="list__item"
             >
-            <button class="js-done">zrobione</button>
-
-            <button class="js-remove">Usuń</button>
-            ${task.content}
+            <button class="js-done list__button list__button--done">${task.done ? "✔" : ""}</button>
+            <span class="list__itemContent ${task.done ? "list__itemContent--done" : ""}" >${task.content}</span> 
+            <button class="js-remove list__button list__button--remove">🗑</button>
             </li>
             `;
         }
@@ -77,6 +77,8 @@
             return;
         } 
             addNewTask(newTaskContent);
+
+            clearAndFocusInput();
         
     };
 
