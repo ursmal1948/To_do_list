@@ -10,10 +10,42 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 20px;
+    display: grid;
+   align-items: center;
 }
 
 
 
 .list__itemContent--done {
-    text-decoration: line-through;    
+    text-decoration: line-through; 
+ 
+}
+
+.list__button {
+    height: 25px;
+    width: 25px;
+}
+
+.list__button--done{
+    background-color: #2e8832;
+    border: 1px solid #2e8832;
+    color: white;
+}
+
+.list__button--done:active {
+    border: 2px solid black;
+}
+
+.list__button--done:hover {
+    background-color: #28742b;
+}
+
+.list__button--remove {
+    background: red;
+    color: white;                   
+    border: 1px solid red;
+}
+
+.list__button--remove:active {
+    border: 2px solid black;
 }
