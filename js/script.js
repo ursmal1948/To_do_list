@@ -20,7 +20,6 @@
 
     const clearAndFocusInput =  () => {
         const newTask = document.querySelector(".js-newTask")
-        console.log(newTask)
         newTask.value = ""
         newTask.focus();
     };
