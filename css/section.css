@@ -1,0 +1,18 @@
+.section {
+    border: 1px solid #ddd;
+    background-color: white;
+}
+
+.section--listTasks {
+    margin-top: 8px;
+}
+
+.section__header {
+    font-size: 18px;
+    font-weight: 700 ;
+    padding-left: 15px ;
+}
+
+.section--last {
+    min-height: 50px;
+}

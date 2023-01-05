@@ -1,0 +1,7 @@
+.container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 680px ;
+    grid-template-rows: 70px 50px 68px ;
+    margin-top: 60px;
+}
