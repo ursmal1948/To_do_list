@@ -6,7 +6,9 @@
     column-gap: 20px;
     padding: 15px;
     background-color: white;
-    align-content: center}
+    align-content: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
 
 @media (max-width:767px) {
     .form {
