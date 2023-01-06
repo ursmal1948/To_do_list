@@ -1,16 +1,15 @@
 .list {
     list-style-type: none;
-    padding-left: 20px;
+    padding-left: 0;
+    margin: 20px;
 }
 
 .list__item {
     padding: 15px;
     border-bottom: 1px solid #ddd;
-    margin-right: 20px;
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 20px;
-    display: grid;
    align-items: center;
 }
 
