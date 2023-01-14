@@ -1,6 +1,6 @@
 {
-    const tasks = [
-       
+    let tasks = [
+
     ];
 
     const toggleTaskDone = (taskIndex) => {
@@ -8,17 +8,17 @@
         render();
     };
 
-     
+
     const addNewTask = (newTaskContent) => {
-        tasks.push({
-            content: newTaskContent,
-        });
- 
-        
-    render();
+
+        tasks = [
+            ...tasks,
+            { content: newTaskContent },
+        ];
+        render();
     };
 
-    const clearAndFocusInput =  () => {
+    const clearAndFocusInput = () => {
         const newTask = document.querySelector(".js-newTask")
         newTask.value = ""
         newTask.focus();
@@ -27,29 +27,29 @@
 
     const removeTask = (taskIndex) => {
         tasks.splice(taskIndex, 1);
-                    render();
+        render();
     };
 
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
         removeButtons.forEach((removeButton, index) => {
-                removeButton.addEventListener("click", () => {
-                    removeTask(index);
-                });
+            removeButton.addEventListener("click", () => {
+                removeTask(index);
+            });
         });
 
         const toggleDoneButtons = document.querySelectorAll(".js-done");
 
         toggleDoneButtons.forEach((toggleDoneButton, index) => {
-                toggleDoneButton.addEventListener("click", () => {
-                    toggleTaskDone(index);
-                });
+            toggleDoneButton.addEventListener("click", () => {
+                toggleTaskDone(index);
+            });
         });
     }
     const render = () => {
         let htmlString = "";
-    
+
         for (const task of tasks) {
             htmlString += `
             <li class="list__item"
@@ -60,31 +60,31 @@
             </li>
             `;
         }
-    
+
         document.querySelector(".js-tasks").innerHTML = htmlString;
 
 
         bindEvents();
     };
 
-    
+
 
     const onFormSubmit = (event) => {
         event.preventDefault();
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
-        if(newTaskContent === "") {
+        if (newTaskContent === "") {
             return;
-        } 
-            addNewTask(newTaskContent);
+        }
+        addNewTask(newTaskContent);
 
-            clearAndFocusInput();
-        
+        clearAndFocusInput();
+
     };
 
-   
 
-   
-    const init =  () => {
+
+
+    const init = () => {
         render();
 
         const form = document.querySelector(".js-form")
