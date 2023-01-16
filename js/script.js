@@ -20,13 +20,17 @@
 
     const clearAndFocusInput = () => {
         const newTask = document.querySelector(".js-newTask")
-        newTask.value = ""
+
+        newTask.value = "";
         newTask.focus();
     };
 
 
     const removeTask = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            ...tasks.slice(taskIndex + 1)
+        ];
         render();
     };
 
