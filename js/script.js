@@ -51,7 +51,8 @@
             });
         });
     }
-    const render = () => {
+
+    const renderTasks = () => {
         let htmlString = "";
 
         for (const task of tasks) {
@@ -67,8 +68,32 @@
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
 
+    };
+
+        const renderButtons = () => {
+            let htmlButtonsString = "";
+
+            if (tasks.length === 0) {
+                return  document.querySelector(".js-buttons").innerHTML = "";
+            } else {
+                htmlButtonsString += `
+                <button class="hideShowButton">Ukryj ukończone</button>
+                <button class="completeAllButton">Ukończ wszystkie</button>
+                `
+            }
+
+            document.querySelector(".js-buttons").innerHTML = htmlButtonsString;
+
+        };
+
+
+
+    const render = () => {
+
+        renderTasks();
 
         bindEvents();
+        renderButtons();
     };
 
 
