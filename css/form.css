@@ -35,10 +35,11 @@
     border: none;
     border-radius: 2px;
     padding: 8px;
-    
+    transition: 1s;
 }
 .form__button:hover {
     background: hsl(180, 100%, 30%);
+    transform: scale(1.5)
 }
 
 @media (max-width:767px) {

@@ -20,17 +20,22 @@
 }
 
 .hideShowButton {
-    color:teal;
+    color: teal;
     border: none;
     background-color: white;
-    font-size: 15px ;
+    font-size: 15px;
 }
 
 .completeAllButton {
-    color:teal;
+    color: teal;
     border: none;
     background-color: white;
     margin-right: 15px;
+    font-size: 15px;
+}
+
+.completeAllButton:disabled {
+    color: rgb(184, 179, 179);
 }
 
 .section__header {
