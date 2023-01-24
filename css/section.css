@@ -2,7 +2,7 @@
     border: 1px solid #ddd;
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    ;
+
 }
 
 .section--listTasks {
@@ -14,11 +14,24 @@
 
 @media (max-width:767px) {
     .section--listTasks {
-        display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr auto;
+        grid-template-rows: 1fr 1fr;
+        padding-bottom: 25px;
     }
 }
+
+@media (max-width:767px) {
+    .hideShowButton {
+        display: block;
+    }
+}
+
+@media (max-width:767px) {
+    .completeAllButton {
+        display: block;
+    }
+}
+
 
 .section__buttons {
     display: grid;
@@ -26,21 +39,37 @@
     grid-gap: 15px;
 }
 
+@media (max-width:767px) {
+    .section__buttons {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
 .hideShowButton {
     color: teal;
     border: none;
     background-color: white;
     font-size: 15px;
+    transition: 1s;
 }
 
-
+.hideShowButton:hover {
+    color: hsl(180, 100%, 35%);
+}
 
 .completeAllButton {
-    color: teal;
+    color: hsl(180, 100%, 25%);
     border: none;
     background-color: white;
     margin-right: 15px;
     font-size: 15px;
+    transition: 1s;
+}
+
+.completeAllButton:hover {
+    color: hsl(180, 100%, 35%);
 }
 
 .completeAllButton:disabled {
@@ -51,6 +80,12 @@
     font-size: 18px;
     font-weight: 700;
     padding-left: 15px;
+}
+
+@media (max-width:767px) {
+    .section__header {
+        padding-bottom: 25px;
+    }
 }
 
 .section--last {
