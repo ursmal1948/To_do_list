@@ -30,6 +30,7 @@
 
 .list__button--done{
     background-color: #2e8832;
+    transition: 2s;
 }
 
 .list__button--done:active {
@@ -37,11 +38,16 @@
 }
 
 .list__button--done:hover {
-    background-color: #28742b;
+    background-color: hsl(122, 49%, 45%);
 }
 
 .list__button--remove {
     background: red;
+    transition: 2s;
+}
+
+.list__button--remove:hover {
+    background: hsl(0, 100%, 70%);
 }
 
 .list__button--remove:active {
