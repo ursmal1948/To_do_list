@@ -2,7 +2,7 @@
     let tasks = [];
     let hideDoneTasks = false;
 
-    const hideShowTasks = () => {
+    const toggleShowTasks = () => {
         hideDoneTasks = !hideDoneTasks;
         render();
     };
@@ -92,7 +92,7 @@
         const hideShowButton = document.querySelector(".js-hideShow");
 
         if (hideShowButton) {
-            hideShowButton.addEventListener("click", hideShowTasks)
+            hideShowButton.addEventListener("click", toggleShowTasks)
         };
 
     };
