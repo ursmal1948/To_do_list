@@ -10,7 +10,14 @@
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
+}
 
+@media (max-width:767px) {
+    .section--listTasks {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+    }
 }
 
 .section__buttons {
@@ -25,6 +32,8 @@
     background-color: white;
     font-size: 15px;
 }
+
+
 
 .completeAllButton {
     color: teal;
