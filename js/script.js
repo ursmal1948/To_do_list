@@ -15,14 +15,12 @@
 
     const completeAllTasks = () => {
         tasks = tasks.map((task) => (
-
             { ...task, done: true }
-        ))
+        ));
         render();
     }
 
     const addNewTask = (newTaskContent) => {
-
         tasks = [
             ...tasks,
             { content: newTaskContent },
@@ -31,7 +29,7 @@
     };
 
     const clearAndFocusInput = () => {
-        const newTask = document.querySelector(".js-newTask")
+        const newTask = document.querySelector(".js-newTask");
 
         newTask.value = "";
         newTask.focus();
@@ -69,8 +67,7 @@
 
         for (const task of tasks) {
             htmlString += `
-            <li class="list__item ${task.done && hideDoneTasks === true ? "list__item--hidden" : ""}"
-            >
+            <li class="list__item ${task.done && hideDoneTasks === true ? "list__item--hidden" : ""}">
             <button class="js-done list__button list__button--done">${task.done ? "✔" : ""}</button>
             <span class="list__itemContent ${task.done ? "list__itemContent--done" : ""}" >${task.content}</span> 
             <button class="js-remove list__button list__button--remove">🗑</button>
@@ -101,9 +98,9 @@
     const renderButtons = () => {
         let htmlButtonsString = "";
 
-        if (tasks.length === 0) {
-            return document.querySelector(".js-buttons").innerHTML = "";
-        } else {
+        if (tasks.length > 0) {
+            
+         
             htmlButtonsString += `
                 <button class="js-hideShow hideShowButton">${hideDoneTasks === false ? "Ukryj" : "Pokaż"} ukończone</button>
                 <button class="js-completeAll completeAllButton"${tasks.every(({ done }) => done) ? "disabled" : ""}>Ukończ wszystkie</button>  
@@ -114,8 +111,6 @@
 
     };
 
-
-
     const render = () => {
 
         renderTasks();
@@ -125,22 +120,16 @@
         bindButtonsEvents();
     };
 
-
-
     const onFormSubmit = (event) => {
         event.preventDefault();
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
+
         if (newTaskContent === "") {
             return;
         }
         addNewTask(newTaskContent);
-
         clearAndFocusInput();
-
     };
-
-
-
 
     const init = () => {
         render();
