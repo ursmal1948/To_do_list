@@ -8,19 +8,20 @@
 .section--listTasks {
     margin-top: 8px;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto auto;
     align-items: center;
+    justify-content: space-between;
 }
 
 @media (max-width:767px) {
     .section--listTasks {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
         padding-bottom: 25px;
+        gap: 5px;
     }
 }
 
-@media (max-width:767px) {
+/* @media (max-width:767px) {
     .hideShowButton {
         display: block;
     }
@@ -30,22 +31,36 @@
     .completeAllButton {
         display: block;
     }
-}
+} */
 
 
 .section__buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 15px;
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-gap: 15px; */
+    display: flex;
+    flex-wrap: wrap;
 }
 
 @media (max-width:767px) {
     .section__buttons {
-        grid-template-rows: 1fr 1fr;
+        /* grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 25px; */
+        flex-wrap: wrap;
     }
 }
+
+.buttons__button {
+    margin: 0 0 0 20px;
+}
+@media (max-width:767px) {
+    .buttons__button {
+        flex-basis: 100%;
+        margin: 10px;
+    }
+}
+
 
 .hideShowButton {
     color: teal;
