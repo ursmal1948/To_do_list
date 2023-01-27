@@ -109,8 +109,14 @@
             
          
             htmlButtonsString += `
-                <button class="js-hideShow buttons__button hideShowButton">${hideDoneTasks === false ? "Ukryj" : "Pokaż"} ukończone</button>
-                <button class="js-completeAll buttons__button completeAllButton"${tasks.every(({ done }) => done) ? "disabled" : ""}>Ukończ wszystkie</button>  
+                <button class="js-hideShow buttons__button hideShowButton">
+                ${hideDoneTasks === false ? "Ukryj" : "Pokaż"} ukończone
+                </button>
+                <button class="js-completeAll buttons__button completeAllButton"
+                ${tasks.every(({ done }) => done) ? "disabled" : ""}
+                >
+                Ukończ wszystkie
+                </button>  
                 `
         }
 
