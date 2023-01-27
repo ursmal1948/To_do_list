@@ -9,7 +9,14 @@
 
 
     const toggleTaskDone = (taskIndex) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done;
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+         {
+            ...tasks[taskIndex], done: !tasks[taskIndex].done,
+         },
+            ...tasks.slice(taskIndex + 1),
+
+        ];
         render();
     };
 
@@ -102,8 +109,8 @@
             
          
             htmlButtonsString += `
-                <button class="js-hideShow hideShowButton">${hideDoneTasks === false ? "Ukryj" : "Pokaż"} ukończone</button>
-                <button class="js-completeAll completeAllButton"${tasks.every(({ done }) => done) ? "disabled" : ""}>Ukończ wszystkie</button>  
+                <button class="js-hideShow buttons__button hideShowButton">${hideDoneTasks === false ? "Ukryj" : "Pokaż"} ukończone</button>
+                <button class="js-completeAll buttons__button completeAllButton"${tasks.every(({ done }) => done) ? "disabled" : ""}>Ukończ wszystkie</button>  
                 `
         }
 
