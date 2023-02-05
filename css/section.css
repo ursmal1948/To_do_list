@@ -1,68 +1,46 @@
 .section {
     border: 1px solid #ddd;
     background-color: white;
+    margin: 10px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
 }
 
-.section--listTasks {
-    margin-top: 8px;
+.section__title {
+    font-size: 18px;
+    font-weight: 700;
+    padding-left: 15px;
+}
+
+.section__header {
     display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
+    grid-template-columns: auto auto ;
     justify-content: space-between;
+    align-items: center;
+    grid-gap: 10px;
+    border-bottom: 1.5px solid #ddd;   
 }
 
 @media (max-width:767px) {
-    .section--listTasks {
-        grid-template-columns: 1fr;
+    .section__header {
+        grid-template-columns:  1fr;
         padding-bottom: 25px;
-        gap: 5px;
+        gap:5px;
     }
 }
-
-/* @media (max-width:767px) {
-    .hideShowButton {
-        display: block;
-    }
-}
-
-@media (max-width:767px) {
-    .completeAllButton {
-        display: block;
-    }
-} */
-
 
 .section__buttons {
-    /* display: grid; */
-    /* grid-template-columns: 1fr 1fr; */
-    /* grid-gap: 15px; */
     display: flex;
     flex-wrap: wrap;
 }
 
 @media (max-width:767px) {
     .section__buttons {
-        /* grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr;
-        gap: 25px; */
         flex-wrap: wrap;
     }
 }
 
 .buttons__button {
     margin: 0 0 0 20px;
-}
-@media (max-width:767px) {
-    .buttons__button {
-        flex-basis: 100%;
-        margin: 10px;
-    }
-}
-
-
-.hideShowButton {
     color: teal;
     border: none;
     background-color: white;
@@ -70,44 +48,18 @@
     transition: 1s;
 }
 
-.hideShowButton:hover {
+.buttons__button:hover {
     color: hsl(180, 100%, 35%);
 }
 
-.completeAllButton {
-    color: hsl(180, 100%, 25%);
-    border: none;
-    background-color: white;
-    margin-right: 15px;
-    font-size: 15px;
-    transition: 1s;
-}
-
-.completeAllButton:hover {
-    color: hsl(180, 100%, 35%);
+@media (max-width:767px) {
+    .buttons__button {
+        flex-basis: 100%;
+        margin: 10px;
+    }
 }
 
 .completeAllButton:disabled {
     color: rgb(184, 179, 179);
 }
 
-.section__header {
-    font-size: 18px;
-    font-weight: 700;
-    padding-left: 15px;
-}
-
-@media (max-width:767px) {
-    .section__header {
-        padding-bottom: 25px;
-    }
-}
-
-.section--last {
-    min-height: 50px;
-    margin-bottom: 30px;
-}
-
-.header {
-    font-size: 30px ;
-}
