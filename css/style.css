@@ -12,3 +12,6 @@ body {
     word-break: break-word;
 }
 
+.header {
+    margin-left: 10px;
+}
