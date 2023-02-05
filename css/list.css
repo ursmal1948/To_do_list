@@ -2,6 +2,7 @@
     list-style-type: none;
     padding-left: 0;
     margin: 20px;
+    min-height: 15px;
 }
 
 .list__item {
